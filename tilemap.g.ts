@@ -28,21 +28,46 @@ namespace myTiles {
     export const tile12 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const tile13 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile14 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile15 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile16 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile17 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile18 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile19 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile20 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile21 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile22 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile23 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile24 = image.ofBuffer(hex``);
 
     helpers._registerFactory("tilemap", function(name: string) {
         switch(helpers.stringTrim(name)) {
             case "level1":
-            case "level1":return tiles.createTilemap(hex`560009000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000406070000000b0c0000000000000000000000000000000000000000000000000004060700000000000000000000000000000406070000000000000000000000000000000000000000000000000000000000000000000203090000000000000000000000000000000000000000000000000000000000040203090000000b0d0c00000b0d0c000000050109070000000000000000000000000000000000000000000000000000000406070000050108000000000000000b0c0000000004070000040700000000000000000004050101080000000000000000000000000000050101090700000000000000000000000000000000000000000000000000000203090000050108000000000000000000000000040209000002090700000000000000040201010108000000000000000000000000000005010101090700000000000000000000000000000000000000000406070000050108000005010800000000000000000000000402010800000501090700000000000405010101010800000000000000000000000000000501010101090700000000000000000606060606060606060606020309060605010806060501080606060606060606060606050101080a0a050101090606060606020101010101080a0a0a0a0a0a0a0a0a0a0a0a0a0a050101010101080606060606060606`, img`
-......................................................................................
-......................................................................................
-......................................................................................
-.....................222...22.........................222..............222............
-.....................222.............................2222...222..222...2222...........
-................222..222.......22....22..22.........22222..............22222..........
-................222..222............222..222.......222222..............222222.........
-...........222..222..222...........2222..2222.....2222222..............2222222........
-222222222222222222222222222222222222222..2222222222222222..............222222222222222
-`, [myTiles.transparency16,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile13], TileScale.Sixteen);
+            case "level1":return tiles.createTilemap(hex`0c000c00010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101`, img`
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+`, [myTiles.transparency16,sprites.castle.tileDarkGrass1], TileScale.Sixteen);
         }
         return null;
     })
@@ -77,6 +102,28 @@ namespace myTiles {
             case "tile12":return tile12;
             case "forestTiles22":
             case "tile13":return tile13;
+            case "tileGrass3":
+            case "tile14":return tile14;
+            case "tilePath1":
+            case "tile15":return tile15;
+            case "tilePath2":
+            case "tile16":return tile16;
+            case "tilePath5":
+            case "tile17":return tile17;
+            case "tilePath4":
+            case "tile18":return tile18;
+            case "tilePath6":
+            case "tile19":return tile19;
+            case "tilePath3":
+            case "tile20":return tile20;
+            case "tilePath7":
+            case "tile21":return tile21;
+            case "tilePath8":
+            case "tile22":return tile22;
+            case "tilePath9":
+            case "tile23":return tile23;
+            case "tileGrass2":
+            case "tile24":return tile24;
         }
         return null;
     })
