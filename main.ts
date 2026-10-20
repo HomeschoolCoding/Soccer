@@ -1,22 +1,22 @@
 tiles.setCurrentTilemap(tilemap`level1`)
 scene.setBackgroundColor(1)
 let mySprite = sprites.create(img`
-    . . . . . . b b b b . . . . . .
-    . . . . . . b b b b . . . . . .
-    . . . . c c 3 3 3 3 b b . . . .
-    . . . . c 3 3 3 3 3 3 b . . . .
-    . . . c 3 3 3 3 1 1 3 3 b . . .
-    . . c c 3 3 3 3 1 1 3 3 b b . .
-    . . c c 3 3 3 3 3 3 1 1 b b . .
-    . . c c 3 3 3 3 3 3 1 1 b b . .
-    . . c c 3 3 3 3 3 3 3 3 b b . .
-    . . c c 3 3 3 3 3 3 3 3 b b . .
-    . . c c 3 3 3 3 3 3 3 3 b b . .
-    . . . c 3 3 3 3 3 3 3 3 b . . .
-    . . . . c 3 3 3 3 3 3 b . . . .
-    . . . . c c 3 3 3 3 b b . . . .
-    . . . . . . c c c c . . . . . .
-    . . . . . . c c c c . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . 1 1 1 1 1 f f . . . .
+    . . . . f f 1 1 1 1 f f f . . .
+    . . . f f f 1 1 1 1 f f f 1 . .
+    . . 1 f f f 1 1 1 1 1 1 1 1 f .
+    . . 1 1 1 1 1 1 1 1 1 1 1 f f .
+    . . 1 1 1 1 1 f f f 1 1 1 f f .
+    . . 1 1 1 1 1 f f f 1 1 1 1 f .
+    . . 1 1 1 1 1 f f f 1 1 1 1 1 .
+    . . 1 f f f 1 1 1 1 1 1 1 1 1 .
+    . . 1 f f f 1 1 1 1 f f f 1 1 .
+    . . . f f f 1 1 1 1 f f f 1 . .
+    . . . . 1 1 1 1 1 1 f f f . . .
+    . . . . . 1 1 1 1 1 1 1 . . . .
+    . . . . . . . . . . . . . . . .
 `, SpriteKind.Player)
 
 mySprite.ay = 50
