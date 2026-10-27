@@ -1,13 +1,15 @@
-// TEACHER HELPER: online controllers, fixed camera and kickoff.
-// Students edit art.ts, pitch.ts, physics.ts or goals.ts instead.
+// TEACHER HELPER: four players, movement, goals and kickoff.
+// Students edit passing.ts, shooting.ts, art.ts or pitch.ts.
 namespace SoccerMatch {
     let players: Sprite[] = []
     let ball: Sprite = null
     let kickoffUntil = 0
-    let nextTouch = 0
-    let nextKick = [0, 0, 0, 0, 0]
+    let nextAction = [0, 0, 0, 0, 0]
 
     export function playerFor(n: number): Sprite { return players[n] }
+    export function teammateFor(n: number): Sprite {
+        return players[n <= 2 ? n + 2 : n - 2]
+    }
 
     function place(n: number): void {
         if (players[n]) players[n].setPosition(n % 2 == 1 ? 44 : 116, n <= 2 ? 42 : 82)
@@ -17,7 +19,6 @@ namespace SoccerMatch {
         ball.setVelocity(0, 0)
         for (let n = 1; n <= 4; n++) place(n)
         kickoffUntil = game.runtime() + 500
-        nextTouch = kickoffUntil
     }
     function connect(player: mp.Player): void {
         let n = mp.getPlayerProperty(player, mp.PlayerProperty.Number)
@@ -47,11 +48,19 @@ namespace SoccerMatch {
         mp.onButtonEvent(mp.MultiplayerButton.A, ControllerButtonEvent.Pressed, function (player) {
             let n = mp.getPlayerProperty(player, mp.PlayerProperty.Number)
             let character = players[n]
-            if (!character || game.runtime() < kickoffUntil || game.runtime() < nextKick[n]) return
+            if (!character || game.runtime() < kickoffUntil || game.runtime() < nextAction[n]) return
             if (Math.abs(character.x - ball.x) <= 13 && Math.abs(character.y - ball.y) <= 13) {
-                BallPhysics.kick(character, ball, 110, n)
-                nextKick[n] = game.runtime() + 250
-                nextTouch = game.runtime() + 180
+                Passing.pass(n, character, ball)
+                nextAction[n] = game.runtime() + 250
+            }
+        })
+        mp.onButtonEvent(mp.MultiplayerButton.B, ControllerButtonEvent.Pressed, function (player) {
+            let n = mp.getPlayerProperty(player, mp.PlayerProperty.Number)
+            let character = players[n]
+            if (!character || game.runtime() < kickoffUntil || game.runtime() < nextAction[n]) return
+            if (Math.abs(character.x - ball.x) <= 13 && Math.abs(character.y - ball.y) <= 13) {
+                Shooting.shoot(n, character, ball)
+                nextAction[n] = game.runtime() + 250
             }
         })
         game.onUpdate(function () {
@@ -62,22 +71,19 @@ namespace SoccerMatch {
                     character.right = Math.min(character.right, Pitch.right() - 1)
                     character.top = Math.max(character.top, Pitch.top() + 1)
                     character.bottom = Math.min(character.bottom, Pitch.bottom() - 1)
-                    if (game.runtime() >= nextTouch && character.overlapsWith(ball)) {
-                        BallPhysics.kick(character, ball, 55, n)
-                        nextTouch = game.runtime() + 120
-                    }
                 }
             }
+            // Player/ball overlap has no effect. Only student A/B code kicks.
             if (game.runtime() >= kickoffUntil) {
                 BallPhysics.bounce(ball)
                 Goals.check(ball)
             }
         })
-        game.onUpdateInterval(50, function () { BallPhysics.slow(ball) })
+        game.onUpdateInterval(50, function () { Passing.slow(ball) })
         scene.createRenderable(100, function (screen) {
             Goals.drawScore(screen)
             screen.fillRect(0, 112, 160, 8, 15)
-            screen.print("Arrows move  A kick", 25, 113, 1)
+            screen.print("Arrows A pass B shoot", 10, 113, 1)
         })
         resetRound()
     }

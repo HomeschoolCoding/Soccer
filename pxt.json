@@ -1,6 +1,6 @@
 {
     "name": "Soccer 2 vs 2",
-    "description": "Intentionally unfinished four-player classroom starter; implement one feature per student file.",
+    "description": "Four-player classroom starting point with four independent tasks; A/B await student implementation.",
     "dependencies": {
         "device": "*",
         "multiplayer": "*"
@@ -10,6 +10,8 @@
         "pitch.ts",
         "physics.ts",
         "goals.ts",
+        "passing.ts",
+        "shooting.ts",
         "main.ts",
         "README.md"
     ],

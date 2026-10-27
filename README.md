@@ -1,31 +1,35 @@
-# Soccer: top-down 2 vs 2: student starting points
+# Soccer: top-down 2 vs 2
 
-The game runs with normal controls, but its mechanics and artwork need student work. Improving one assigned feature is the goal; leaving the starter unchanged is not complete. Existing student artwork is preserved.
+The approved starting point is merged into master. This game intentionally needs student implementation; unchanged starter behavior does not complete a task. Existing student artwork is preserved.
 
-## Start today
+## Start class
 
-1. Choose one of the four Ready cards on [your board](https://github.com/orgs/HomeschoolCoding/projects/1) with your team.
-2. In [MakeCode Arcade](https://arcade.makecode.com), use **Import → Import URL** and your exact task branch URL below. Start with a fresh import, not an old browser copy of master.
-3. Open JavaScript → Explorer → Files. Edit only your task file and check the repository and branch before every push.
-4. Use your card's normal playtest to show what you changed.
+1. Choose one of the 4 Ready tasks on [your board](https://github.com/orgs/HomeschoolCoding/projects/1) with the team.
+2. Open [MakeCode Arcade](https://arcade.makecode.com), use **Import → Import URL**, and paste your exact task branch below. Use a fresh import; old browser copies do not update automatically.
+3. Open JavaScript → Explorer → Files and select your one task file. Before editing or pushing, check the repository and branch.
+4. Make one small improvement, run your card's checks with a teammate, commit and push to your task branch. When ready today or next class, open a PR into **master** for teacher review.
 
-| Task | File | Starting weakness | Import URL |
+| Task | File | Starting point | Import URL |
 | --- | --- | --- | --- |
-| [Goals: add a first-to-five finish and a fresh match](https://github.com/HomeschoolCoding/Soccer/issues/7) | `goals.ts` | Normal goals already award one point and reset kickoff, but the match never ends. It continues through five, ten or more goals without a winner. | `https://github.com/HomeschoolCoding/Soccer#codex-goals-and-score` |
-| [Shots: aim at the attacking goal and add ball friction](https://github.com/HomeschoolCoding/Soccer/issues/3) | `physics.ts` | A automatically passes toward the other teammate, even when that is away from the goal. The ball also has no friction and keeps moving indefinitely. | `https://github.com/HomeschoolCoding/Soccer#codex-ball-physics` |
+| [Shooting: implement B shots toward the attacking goal](https://github.com/HomeschoolCoding/Soccer/issues/7) | `shooting.ts` | B calls an empty shoot() function. Neither A nor body contact provides a working shot in the starter. | `https://github.com/HomeschoolCoding/Soccer#codex-goals-and-score` |
+| [Passing: implement A passes and ball friction](https://github.com/HomeschoolCoding/Soccer/issues/3) | `passing.ts` | A calls an empty pass() function. Body contact cannot move the ball, and slow() has no friction yet. | `https://github.com/HomeschoolCoding/Soccer#codex-ball-physics` |
 | [Player art: develop the student-made team shapes](https://github.com/HomeschoolCoding/Soccer/issues/2) | `art.ts` | The generated humanoid players have been removed. The student's original red and blue shapes from NewSprite are retained and fitted to 8 x 8; same-team players currently look identical. | `https://github.com/HomeschoolCoding/Soccer#codex-player-art` |
 | [Pitch: turn the gray test area into a soccer arena](https://github.com/HomeschoolCoding/Soccer/issues/21) | `pitch.ts` | The generated grass stripes, field lines, circle, penalty areas and nets have been removed. Only gray space and two plain goal markers remain. | `https://github.com/HomeschoolCoding/Soccer#codex-pitch-design` |
 
-## Normal controls
+## Controls and supplied setup
 
-Arrows move and A kicks near the ball. A currently passes toward another teammate rather than shooting at the attacking goal, and the ball never slows down. Red players 1 + 3 should attack the right goal; blue players 2 + 4 should attack the left. Goals count normally, but there is no match winner or fresh-match score reset yet.
+Arrows move, A is for passing, and B is for shooting. A and B deliberately do nothing until implemented. Walking into the ball never moves it.
 
-The pitch is a gray placeholder with two plain goal markers. The student's original NewSprite red/blue shapes are kept and fitted to 8 x 8; the art task develops these shapes and distinguishes teammates. The original student ball remains 6 x 6. All original branches and artwork remain preserved, including the student-created background branch.
+Four-player connections, movement, goal counting, kickoff resets and ball/field boundaries are supplied. Player collisions do not push, kick or dribble the ball. There are no automatic kicks or extra test controls. The ball stays still until a student implements a pass or shot.
 
-## Multiplayer and finishing
+Passing and shooting are separate tasks and files. The passing task also implements friction. Shooting can be demonstrated before friction is ready. To test passing, connect a teammate: players 1 + 3 are red, players 2 + 4 blue. Red attacks right; blue attacks left.
 
-The teacher helper in `main.ts` supplies four-player connection/disconnection and movement. Use simulator player buttons 2–4 for local testing. Native online play uses Share → Host a multiplayer game, then classmates join at https://aka.ms/a9 or the host link. Playing together is separate from editing a branch. Actual online sign-in testing remains for the teacher.
+The pitch is gray with two plain goal markers. The original student-made red/blue shapes are kept at 8 x 8, and the original ball art is kept at 6 x 6. The art student develops those shapes and distinguishes teammates. All original branches and artwork remain preserved, including the student-created background branch.
 
-Commit and push to your task branch, then open a PR for review. While the revised baseline PR is open, target `codex-student-challenges`; after it merges, the teacher synchronizes branches and retargets student PRs to master. Never push directly to master. Stay in JavaScript and leave other students' files, `main.ts`, `pxt.json` and GitHub settings for the teacher.
+## Working together
 
-The teacher should merge the revised baseline before student PRs. After a squash merge, synchronize master into task branches while preserving any student commits. Each card has specific before/after checks; the unchanged starter does not pass.
+Each task has its own file and prepared branch: `shooting.ts`, `passing.ts`, `art.ts`, `pitch.ts`. Leave teacher helpers, `main.ts`, `pxt.json`, other students' files and GitHub settings for the teacher. Stay in JavaScript. The branch contains the current classroom baseline, so you can start immediately. Only one student should claim a task branch at a time.
+
+Use small commits and push progress to your branch. When you finish, open a PR into master and include your before/after demonstration. The teacher reviews and merges student changes. After other work is merged, coordinate with the teacher before pulling shared changes or resolving conflicts; never overwrite another student's work.
+
+For simulator testing, connect players 2–4 with their player buttons. Native online play uses Share → Host a multiplayer game, then classmates join at https://aka.ms/a9 or the host link. Playing together is separate from editing code. Actual online sign-in testing remains for the teacher.
