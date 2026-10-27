@@ -12,10 +12,10 @@ A working four-player online starter for the October 27 class.
 
 | Choose a task | Your file | Import URL |
 | --- | --- | --- |
-| [Goals: scoring, first-to-five winner and match feedback](https://github.com/HomeschoolCoding/Soccer/issues/7) | `goals.ts` | `https://github.com/HomeschoolCoding/Soccer#codex/goals-and-score` |
-| [Ball physics: tune friction, kicks and rebounds](https://github.com/HomeschoolCoding/Soccer/issues/3) | `physics.ts` | `https://github.com/HomeschoolCoding/Soccer#codex/ball-physics` |
-| [Player art: small red and blue soccer teams](https://github.com/HomeschoolCoding/Soccer/issues/2) | `art.ts` | `https://github.com/HomeschoolCoding/Soccer#codex/player-art` |
-| [Pitch: draw the top-down soccer arena](https://github.com/HomeschoolCoding/Soccer/issues/21) | `pitch.ts` | `https://github.com/HomeschoolCoding/Soccer#codex/pitch-design` |
+| [Goals: scoring, first-to-five winner and match feedback](https://github.com/HomeschoolCoding/Soccer/issues/7) | `goals.ts` | `https://github.com/HomeschoolCoding/Soccer#codex-goals-and-score` |
+| [Ball physics: tune friction, kicks and rebounds](https://github.com/HomeschoolCoding/Soccer/issues/3) | `physics.ts` | `https://github.com/HomeschoolCoding/Soccer#codex-ball-physics` |
+| [Player art: small red and blue soccer teams](https://github.com/HomeschoolCoding/Soccer/issues/2) | `art.ts` | `https://github.com/HomeschoolCoding/Soccer#codex-player-art` |
+| [Pitch: draw the top-down soccer arena](https://github.com/HomeschoolCoding/Soccer/issues/21) | `pitch.ts` | `https://github.com/HomeschoolCoding/Soccer#codex-pitch-design` |
 
 The multiplayer and startup code are ready in `main.ts`. You do not need to edit that file or `pxt.json`. Each student edits one separate file so the team can work at the same time. These starters use the JavaScript editor.
 
@@ -32,7 +32,7 @@ Only connected players get characters. The host can test alone; other characters
 
 ## Finish your task
 
-Run your card's checks with a teammate. Commit and push to your task branch, then open a PR to master and move the card to In Pull Request. While the teacher's starter PR is still under review, target `codex/classroom-multiplayer` if you need to open your task PR; retarget it to master once the starter is merged. Don't push directly to master or switch an old copy onto it by accident.
+Run your card's checks with a teammate. Commit and push to your task branch, then open a PR to master and move the card to In Pull Request. While the teacher's starter PR is still under review, target `codex-classroom-multiplayer` if you need to open your task PR; retarget it to master once the starter is merged. Don't push directly to master or switch an old copy onto it by accident.
 
 ## Existing work
 
