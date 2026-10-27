@@ -1,4 +1,4 @@
-// YOUR TASK: scoring and winning. Edit only this file.
+// TEACHER HELPER: normal goal counting and kickoff reset.
 namespace Goals {
     let redScore = 0
     let blueScore = 0
@@ -11,7 +11,6 @@ namespace Goals {
             redScore += 1
             SoccerMatch.resetRound()
         }
-        // Student challenge: first team to five wins, then a fresh match.
     }
     export function drawScore(screen: Image): void {
         screen.fillRect(0, 0, 160, 12, 15)
