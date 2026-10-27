@@ -1,45 +1,35 @@
 # Soccer: top-down 2 vs 2
 
-A working four-player online starter for the October 27 class.
+The approved starting point is merged into master. This game intentionally needs student implementation; unchanged starter behavior does not complete a task. Existing student artwork is preserved.
 
-## Start today
+## Start class
 
-1. Open [your board](https://github.com/orgs/HomeschoolCoding/projects/1) and agree one of the four Ready tasks with your team.
-2. Open [MakeCode Arcade](https://arcade.makecode.com/), choose **Import → Import URL**, and paste your exact task branch URL from the table below. Sign in with your own GitHub account if needed.
-3. Open JavaScript and **Explorer → Files**. Select your task's file. If the file explorer is collapsed, expand it to see the named files.
-4. Run the simulator. Before editing or pushing, check that the GitHub view shows the correct repository **and your task branch**, not master.
-5. Make one small change, playtest, commit and push to your branch, and open a pull request for the teacher.
+1. Choose one of the 4 Ready tasks on [your board](https://github.com/orgs/HomeschoolCoding/projects/1) with the team.
+2. Open [MakeCode Arcade](https://arcade.makecode.com), use **Import → Import URL**, and paste your exact task branch below. Use a fresh import; old browser copies do not update automatically.
+3. Open JavaScript → Explorer → Files and select your one task file. Before editing or pushing, check the repository and branch.
+4. Make one small improvement, run your card's checks with a teammate, commit and push to your task branch. When ready today or next class, open a PR into **master** for teacher review.
 
-| Choose a task | Your file | Import URL |
-| --- | --- | --- |
-| [Goals: scoring, first-to-five winner and match feedback](https://github.com/HomeschoolCoding/Soccer/issues/7) | `goals.ts` | `https://github.com/HomeschoolCoding/Soccer#codex-goals-and-score` |
-| [Ball physics: tune friction, kicks and rebounds](https://github.com/HomeschoolCoding/Soccer/issues/3) | `physics.ts` | `https://github.com/HomeschoolCoding/Soccer#codex-ball-physics` |
-| [Player art: small red and blue soccer teams](https://github.com/HomeschoolCoding/Soccer/issues/2) | `art.ts` | `https://github.com/HomeschoolCoding/Soccer#codex-player-art` |
-| [Pitch: draw the top-down soccer arena](https://github.com/HomeschoolCoding/Soccer/issues/21) | `pitch.ts` | `https://github.com/HomeschoolCoding/Soccer#codex-pitch-design` |
+| Task | File | Starting point | Import URL |
+| --- | --- | --- | --- |
+| [Shooting: implement B shots toward the attacking goal](https://github.com/HomeschoolCoding/Soccer/issues/7) | `shooting.ts` | B calls an empty shoot() function. Neither A nor body contact provides a working shot in the starter. | `https://github.com/HomeschoolCoding/Soccer#codex-goals-and-score` |
+| [Passing: implement A passes and ball friction](https://github.com/HomeschoolCoding/Soccer/issues/3) | `passing.ts` | A calls an empty pass() function. Body contact cannot move the ball, and slow() has no friction yet. | `https://github.com/HomeschoolCoding/Soccer#codex-ball-physics` |
+| [Player art: develop the student-made team shapes](https://github.com/HomeschoolCoding/Soccer/issues/2) | `art.ts` | The generated humanoid players have been removed. The student's original red and blue shapes from NewSprite are retained and fitted to 8 x 8; same-team players currently look identical. | `https://github.com/HomeschoolCoding/Soccer#codex-player-art` |
+| [Pitch: turn the gray test area into a soccer arena](https://github.com/HomeschoolCoding/Soccer/issues/21) | `pitch.ts` | The generated grass stripes, field lines, circle, penalty areas and nets have been removed. Only gray space and two plain goal markers remain. | `https://github.com/HomeschoolCoding/Soccer#codex-pitch-design` |
 
-The multiplayer and startup code are ready in `main.ts`. You do not need to edit that file or `pxt.json`. Each student edits one separate file so the team can work at the same time. These starters use the JavaScript editor.
+## Controls and supplied setup
 
-## Play on separate computers
+Arrows move, A is for passing, and B is for shooting. A and B deliberately do nothing until implemented. Walking into the ball never moves it.
 
-- The host opens the game and chooses **Share → Host a multiplayer game**. If the dialog first asks for a project name, continue to the multiplayer hosting option.
-- Other players open [MakeCode's game lobby](https://aka.ms/a9) on their own computers and enter the host's code, or use the host's join link.
-- The host starts the game. Up to four people, including the host, can play. The game runs in the host session; everyone sees the same screen. Joining a play session does not give somebody a separate copy to edit.
-- To try new code, the host starts a fresh session after updating the project.
+Four-player connections, movement, goal counting, kickoff resets and ball/field boundaries are supplied. Player collisions do not push, kick or dribble the ball. There are no automatic kicks or extra test controls. The ball stays still until a student implements a pass or shot.
 
-Arrow keys move in all directions; A kicks when close to the ball. In keyboard simulation A is normally Z/Space; focus the simulator first. Players 1 + 3 are red; 2 + 4 are blue.
+Passing and shooting are separate tasks and files. The passing task also implements friction. Shooting can be demonstrated before friction is ready. To test passing, connect a teammate: players 1 + 3 are red, players 2 + 4 blue. Red attacks right; blue attacks left.
 
-Only connected players get characters. The host can test alone; other characters appear as players join. A disconnected player is removed and can rejoin.
+The pitch is gray with two plain goal markers. The original student-made red/blue shapes are kept at 8 x 8, and the original ball art is kept at 6 x 6. The art student develops those shapes and distinguishes teammates. All original branches and artwork remain preserved, including the student-created background branch.
 
-## Finish your task
+## Working together
 
-Run your card's checks with a teammate. Commit and push to your task branch, then open a PR to master and move the card to In Pull Request. While the teacher's starter PR is still under review, target `codex-classroom-multiplayer` if you need to open your task PR; retarget it to master once the starter is merged. Don't push directly to master or switch an old copy onto it by accident.
+Each task has its own file and prepared branch: `shooting.ts`, `passing.ts`, `art.ts`, `pitch.ts`. Leave teacher helpers, `main.ts`, `pxt.json`, other students' files and GitHub settings for the teacher. Stay in JavaScript. The branch contains the current classroom baseline, so you can start immediately. Only one student should claim a task branch at a time.
 
-## Existing work
+Use small commits and push progress to your branch. When you finish, open a PR into master and include your before/after demonstration. The teacher reviews and merges student changes. After other work is merged, coordinate with the teacher before pulling shared changes or resolving conflicts; never overwrite another student's work.
 
-Original branches and history have been preserved. Source excerpts are in `student-work/`; the original full assets remain on their branches. The original student soccer ball is sampled into a 6 x 6 ball. The starter uses a fixed top-down pitch, 8 x 8 players, and no gravity or camera following.
-
-[Official online multiplayer guide](https://arcade.makecode.com/multiplayer)
-
-#### Metadata (used for search, rendering)
-
-* for PXT/arcade
+For simulator testing, connect players 2–4 with their player buttons. Native online play uses Share → Host a multiplayer game, then classmates join at https://aka.ms/a9 or the host link. Playing together is separate from editing code. Actual online sign-in testing remains for the teacher.
