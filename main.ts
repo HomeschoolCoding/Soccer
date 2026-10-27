@@ -7,6 +7,8 @@ namespace SoccerMatch {
     let nextTouch = 0
     let nextKick = [0, 0, 0, 0, 0]
 
+    export function playerFor(n: number): Sprite { return players[n] }
+
     function place(n: number): void {
         if (players[n]) players[n].setPosition(n % 2 == 1 ? 44 : 116, n <= 2 ? 42 : 82)
     }
@@ -47,7 +49,7 @@ namespace SoccerMatch {
             let character = players[n]
             if (!character || game.runtime() < kickoffUntil || game.runtime() < nextKick[n]) return
             if (Math.abs(character.x - ball.x) <= 13 && Math.abs(character.y - ball.y) <= 13) {
-                BallPhysics.kick(character, ball, 110)
+                BallPhysics.kick(character, ball, 110, n)
                 nextKick[n] = game.runtime() + 250
                 nextTouch = game.runtime() + 180
             }
@@ -61,7 +63,7 @@ namespace SoccerMatch {
                     character.top = Math.max(character.top, Pitch.top() + 1)
                     character.bottom = Math.min(character.bottom, Pitch.bottom() - 1)
                     if (game.runtime() >= nextTouch && character.overlapsWith(ball)) {
-                        BallPhysics.kick(character, ball, 55)
+                        BallPhysics.kick(character, ball, 55, n)
                         nextTouch = game.runtime() + 120
                     }
                 }

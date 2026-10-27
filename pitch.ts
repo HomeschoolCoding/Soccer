@@ -12,15 +12,11 @@ namespace Pitch {
     }
     export function draw(): void {
         let field = image.create(160, 120)
-        field.fill(7)
-        for (let x = left(); x < right(); x += 24) field.fillRect(x, top(), 12, bottom() - top(), 6)
-        field.drawRect(left(), top(), right() - left(), bottom() - top(), 1)
-        field.drawLine(80, top(), 80, bottom(), 1)
-        field.drawCircle(80, 62, 15, 1)
-        field.drawRect(left(), 36, 22, 52, 1)
-        field.drawRect(right() - 22, 36, 22, 52, 1)
-        field.fillRect(0, goalTop(), left() + 1, goalBottom() - goalTop(), 2)
-        field.fillRect(right(), goalTop(), 8, goalBottom() - goalTop(), 8)
+        // TODO: draw the actual pitch, markings and goals.
+        // Gray is an unfinished placeholder; these two lines only mark the goal openings.
+        field.fill(13)
+        field.drawLine(left(), goalTop(), left(), goalBottom(), 12)
+        field.drawLine(right(), goalTop(), right(), goalBottom(), 12)
         scene.setBackgroundImage(field)
     }
 }
