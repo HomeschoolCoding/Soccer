@@ -1,26 +1,26 @@
 {
-    "name": "gamesept",
-    "description": "",
+    "name": "Soccer 2 vs 2",
+    "description": "Four-player online multiplayer classroom starter; one student task per file.",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "multiplayer": "*"
     },
     "files": [
-        "main.blocks",
+        "art.ts",
+        "pitch.ts",
+        "physics.ts",
+        "goals.ts",
         "main.ts",
-        "README.md",
-        "assets.json",
-        "tilemap.g.jres",
-        "tilemap.g.ts"
+        "README.md"
     ],
-    "testFiles": [
-        "test.ts"
-    ],
+    "testFiles": [],
     "targetVersions": {
-        "target": "4.1.25",
+        "target": "4.1.27",
         "targetId": "arcade"
     },
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "tsprj"
+    "preferredEditor": "tsprj",
+    "languageRestriction": "javascript-only"
 }
