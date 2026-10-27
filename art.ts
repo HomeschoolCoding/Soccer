@@ -1,5 +1,8 @@
 // YOUR TASK: small player art. Edit only this file.
 namespace SoccerArt {
+    // STUDENT TASK START: Player art: develop the student-made team shapes (#2)
+    // EDIT playerImage()/imageFor() here: develop the existing student artwork.
+    // Use the player number to distinguish characters; keep the required sprite size.
     export function playerImage(n: number): Image {
         // Keep the student's original red/blue team shapes from NewSprite.
         // TODO: develop these into recognizable players and distinguish teammates.
@@ -49,6 +52,9 @@ namespace SoccerArt {
         }
         return picture
     }
+
+    // STUDENT TASK END: Player art: develop the student-made team shapes
+    // TEACHER HELPER: leave the original student ball artwork below unchanged.
     export function ballImage(): Image {
         // Original student soccer ball; sample it into a 6 x 6 image.
         let original = img`

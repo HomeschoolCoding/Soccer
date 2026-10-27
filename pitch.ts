@@ -10,6 +10,9 @@ namespace Pitch {
     export function inGoalMouth(y: number): boolean {
         return y >= goalTop() && y <= goalBottom()
     }
+    // STUDENT TASK START: Pitch: turn the gray test area into a soccer arena (#21)
+    // EDIT draw() here: replace the gray field and markers with the soccer pitch.
+    // Keep the coordinate functions above unchanged; other code relies on them.
     export function draw(): void {
         let field = image.create(160, 120)
         // TODO: draw the actual pitch, markings and goals.
@@ -19,4 +22,6 @@ namespace Pitch {
         field.drawLine(right(), goalTop(), right(), goalBottom(), 12)
         scene.setBackgroundImage(field)
     }
+    // STUDENT TASK END: Pitch: turn the gray test area into a soccer arena
+
 }

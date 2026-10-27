@@ -1,5 +1,8 @@
 // YOUR TASK: implement A passing and ball friction. Edit only this file.
 namespace Passing {
+    // STUDENT TASK START: Passing: implement A passes and ball friction (#3)
+    // WRITE YOUR A-BUTTON PASS inside pass(). It is currently empty.
+    // Then WRITE BALL FRICTION inside slow(). Both functions belong to this task.
     export function pass(playerNumber: number, player: Sprite, ball: Sprite): void {
         // A already calls this when you are near the ball.
         // TODO: get SoccerMatch.teammateFor(playerNumber); it can be null.
@@ -10,4 +13,6 @@ namespace Passing {
         // TODO: implement friction. This runs every 50 ms for passes and shots.
         // Reduce velocity gradually and stop tiny movement without reversing it.
     }
+    // STUDENT TASK END: Passing: implement A passes and ball friction
+
 }
